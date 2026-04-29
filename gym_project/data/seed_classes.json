@@ -1,0 +1,137 @@
+[
+  {
+    "title": "Sunrise Yoga",
+    "type": "Yoga",
+    "instructor": "Sarah",
+    "capacity": 20,
+    "start_time": "2026-04-01T07:30:00",
+    "duration_mins": 60,
+    "location": "Studio A"
+  },
+  {
+    "title": "Power HIIT",
+    "type": "HIIT",
+    "instructor": "Mike",
+    "capacity": 25,
+    "start_time": "2026-04-01T08:00:00",
+    "duration_mins": 45,
+    "location": "Main Floor"
+  },
+  {
+    "title": "Cardio Blast",
+    "type": "Cardio",
+    "instructor": "John",
+    "capacity": 15,
+    "start_time": "2026-04-01T09:00:00",
+    "duration_mins": 45,
+    "location": "Cardio Zone"
+  },
+  {
+    "title": "Strength Fundamentals",
+    "type": "Strength",
+    "instructor": "Mike",
+    "capacity": 12,
+    "start_time": "2026-04-01T10:00:00",
+    "duration_mins": 75,
+    "location": "Weights Area"
+  },
+  {
+    "title": "Morning Meditation",
+    "type": "Yoga",
+    "instructor": "Sarah",
+    "capacity": 25,
+    "start_time": "2026-04-01T10:30:00",
+    "duration_mins": 40,
+    "location": "Studio B"
+  },
+  {
+    "title": "Tabata Burn",
+    "type": "HIIT",
+    "instructor": "Chloe",
+    "capacity": 22,
+    "start_time": "2026-04-01T11:00:00",
+    "duration_mins": 40,
+    "location": "Main Floor"
+  },
+  {
+    "title": "Zumba Party",
+    "type": "Cardio",
+    "instructor": "Maria",
+    "capacity": 40,
+    "start_time": "2026-04-01T12:00:00",
+    "duration_mins": 50,
+    "location": "Studio C"
+  },
+  {
+    "title": "Bench Press Basics",
+    "type": "Strength",
+    "instructor": "Mike",
+    "capacity": 10,
+    "start_time": "2026-04-01T12:30:00",
+    "duration_mins": 60,
+    "location": "Weights Area"
+  },
+  {
+    "title": "Lunchtime Yoga",
+    "type": "Yoga",
+    "instructor": "Elena",
+    "capacity": 22,
+    "start_time": "2026-04-01T13:00:00",
+    "duration_mins": 50,
+    "location": "Studio A"
+  },
+  {
+    "title": "Spin & Sweat",
+    "type": "Cardio",
+    "instructor": "Chloe",
+    "capacity": 30,
+    "start_time": "2026-04-01T14:00:00",
+    "duration_mins": 45,
+    "location": "Spin Room"
+  },
+  {
+    "title": "Deadlift Clinic",
+    "type": "Strength",
+    "instructor": "John",
+    "capacity": 8,
+    "start_time": "2026-04-01T15:00:00",
+    "duration_mins": 60,
+    "location": "Weights Area"
+  },
+  {
+    "title": "Evening Flow",
+    "type": "Yoga",
+    "instructor": "Elena",
+    "capacity": 18,
+    "start_time": "2026-04-01T17:00:00",
+    "duration_mins": 55,
+    "location": "Studio B"
+  },
+  {
+    "title": "HIIT Max",
+    "type": "HIIT",
+    "instructor": "Mike",
+    "capacity": 22,
+    "start_time": "2026-04-01T18:30:00",
+    "duration_mins": 50,
+    "location": "Main Floor"
+  },
+  {
+    "title": "Strength Circuit",
+    "type": "Strength",
+    "instructor": "Mike",
+    "capacity": 14,
+    "start_time": "2026-04-01T19:00:00",
+    "duration_mins": 55,
+    "location": "Weights Area"
+  },
+  {
+    "title": "Night HIIT",
+    "type": "HIIT",
+    "instructor": "Mike",
+    "capacity": 15,
+    "start_time": "2026-04-01T20:00:00",
+    "duration_mins": 40,
+    "location": "Main Floor"
+  }
+]

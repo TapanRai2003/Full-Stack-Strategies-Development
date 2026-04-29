@@ -1,0 +1,18 @@
+# Angular
+node_modules/
+.angular/
+dist/
+coverage/
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
