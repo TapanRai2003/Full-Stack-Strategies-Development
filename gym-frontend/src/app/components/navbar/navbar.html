@@ -1,0 +1,61 @@
+<nav class="navbar">
+  <a routerLink="/" class="brand">
+    <div class="brand-mark">HG</div>
+    <div class="brand-text">
+      <span class="brand-title">Hero Gym</span>
+      <span class="brand-subtitle">Train Better</span>
+    </div>
+  </a>
+
+  <div class="nav-links">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      Home
+    </a>
+
+    <a routerLink="/classes" routerLinkActive="active">
+      Classes
+    </a>
+
+    <ng-container *ngIf="authService.isLoggedIn(); else loggedOut">
+      <a
+        *ngIf="!authService.isAdmin()"
+        routerLink="/my-bookings"
+        routerLinkActive="active"
+      >
+        My Bookings
+      </a>
+
+      <a routerLink="/profile" routerLinkActive="active">
+        Profile
+      </a>
+
+      <a
+        *ngIf="authService.isAdmin()"
+        routerLink="/admin"
+        routerLinkActive="active"
+      >
+        Admin
+      </a>
+
+      <a
+        *ngIf="authService.isAdmin()"
+        routerLink="/analytics"
+        routerLinkActive="active"
+      >
+        Analytics
+      </a>
+
+      <button (click)="logout()" class="logout-btn">Logout</button>
+    </ng-container>
+
+    <ng-template #loggedOut>
+      <a routerLink="/login" routerLinkActive="active">
+        Login
+      </a>
+
+      <a routerLink="/register" class="join-btn" routerLinkActive="active">
+        Join Now
+      </a>
+    </ng-template>
+  </div>
+</nav>

@@ -1,0 +1,46 @@
+<section class="manage-header">
+  <div>
+    <span class="page-badge">Admin Area</span>
+    <h2>Manage Classes</h2>
+    <p>View, organise and update gym classes in the system</p>
+  </div>
+
+  <a routerLink="/admin/add-class" class="add-btn">+ Add New Class</a>
+</section>
+
+<p class="message" *ngIf="message">{{ message }}</p>
+
+<div class="class-grid" *ngIf="classes.length > 0">
+  <div class="class-card" *ngFor="let gymClass of classes">
+    <div class="card-top">
+      <span class="type-badge">{{ gymClass.type }}</span>
+      <span class="capacity-badge">{{ gymClass.capacity }} spaces</span>
+    </div>
+
+    <h3>{{ gymClass.title }}</h3>
+
+    <div class="class-details">
+      <p><strong>Instructor:</strong> {{ gymClass.instructor }}</p>
+      <p><strong>Location:</strong> {{ gymClass.location || 'N/A' }}</p>
+      <p><strong>Start Time:</strong> {{ gymClass.start_time || 'N/A' }}</p>
+      <p><strong>Duration:</strong> {{ gymClass.duration_mins || 45 }} mins</p>
+    </div>
+
+    <div class="card-actions">
+      <a
+        class="edit-btn"
+        [routerLink]="['/admin/edit-class', gymClass.id]"
+      >
+        Edit
+      </a>
+
+      <button
+        type="button"
+        class="delete-btn"
+        (click)="deleteClass(gymClass.id)"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</div>

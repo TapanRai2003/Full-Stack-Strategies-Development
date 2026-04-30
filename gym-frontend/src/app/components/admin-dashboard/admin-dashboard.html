@@ -1,0 +1,36 @@
+<section class="dashboard">
+  <h1 class="page-title">Admin Dashboard</h1>
+  <p class="page-subtitle">Overview of your Hero Gym system</p>
+
+  <div class="stats">
+    <div class="card">
+      <h3>Total Users</h3>
+      <p>{{ summary.total_users || 0 }}</p>
+    </div>
+
+    <div class="card">
+      <h3>Total Classes</h3>
+      <p>{{ summary.total_classes || 0 }}</p>
+    </div>
+
+    <div class="card">
+      <h3>Total Bookings</h3>
+      <p>{{ summary.total_bookings || 0 }}</p>
+    </div>
+
+    <div class="card success">
+      <h3>Active Bookings</h3>
+      <p>{{ summary.active_bookings || 0 }}</p>
+    </div>
+
+    <div class="card danger">
+      <h3>Cancelled</h3>
+      <p>{{ summary.cancelled_bookings || 0 }}</p>
+    </div>
+  </div>
+
+  <div class="actions">
+    <a routerLink="/admin/add-class" class="btn">+ Add New Class</a>
+    <a routerLink="/admin/manage-classes" class="btn secondary-btn">Manage Classes</a>
+  </div>
+</section>

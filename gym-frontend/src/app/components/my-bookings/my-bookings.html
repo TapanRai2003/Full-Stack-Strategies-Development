@@ -1,0 +1,65 @@
+<section class="bookings-header">
+  <h2>My Bookings</h2>
+  <p>View and manage the classes you have booked</p>
+</section>
+
+<p class="message" *ngIf="message">{{ message }}</p>
+
+<div class="booking-summary">
+  <span>Total bookings</span>
+  <strong>{{ bookings.length }}</strong>
+</div>
+
+<h3 class="section-title">Active Bookings</h3>
+
+<div class="booking-grid" *ngIf="activeBookings.length > 0; else noActive">
+  <div class="booking-card" *ngFor="let booking of activeBookings">
+    <div class="booking-image-wrap">
+      <img class="booking-image" [src]="booking.image" [alt]="booking.class_title" />
+      <span class="status-badge active-badge">{{ booking.status }}</span>
+    </div>
+
+    <div class="booking-content">
+      <h3>{{ booking.class_title }}</h3>
+      <p><strong>Type:</strong> {{ booking.class_type }}</p>
+      <p><strong>Instructor:</strong> {{ booking.instructor }}</p>
+      <p><strong>Location:</strong> {{ booking.location }}</p>
+      <p><strong>Start Time:</strong> {{ booking.start_time }}</p>
+
+      <button
+        type="button"
+        class="cancel-btn"
+        (click)="cancelBooking(booking.id)"
+      >
+        Cancel Booking
+      </button>
+    </div>
+  </div>
+</div>
+
+<ng-template #noActive>
+  <p class="empty-text">No active bookings</p>
+</ng-template>
+
+<h3 class="section-title">Cancelled Bookings</h3>
+
+<div class="booking-grid cancelled-grid" *ngIf="cancelledBookings.length > 0; else noCancelled">
+  <div class="booking-card cancelled-card" *ngFor="let booking of cancelledBookings">
+    <div class="booking-image-wrap">
+      <img class="booking-image" [src]="booking.image" [alt]="booking.class_title" />
+      <span class="status-badge cancelled-badge">{{ booking.status }}</span>
+    </div>
+
+    <div class="booking-content">
+      <h3>{{ booking.class_title }}</h3>
+      <p><strong>Type:</strong> {{ booking.class_type }}</p>
+      <p><strong>Instructor:</strong> {{ booking.instructor }}</p>
+      <p><strong>Location:</strong> {{ booking.location }}</p>
+      <p><strong>Start Time:</strong> {{ booking.start_time }}</p>
+    </div>
+  </div>
+</div>
+
+<ng-template #noCancelled>
+  <p class="empty-text">No cancelled bookings</p>
+</ng-template>

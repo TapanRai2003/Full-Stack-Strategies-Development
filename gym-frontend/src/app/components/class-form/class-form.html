@@ -1,0 +1,75 @@
+<section class="class-form-page">
+  <div class="form-header">
+    <h1 class="page-title">{{ isEditMode ? 'Edit Class' : 'Add New Class' }}</h1>
+    <p class="page-subtitle">
+      {{ isEditMode ? 'Update class details below' : 'Create a new gym class for members' }}
+    </p>
+  </div>
+
+  <p class="message">{{ message }}</p>
+
+  <form class="class-form" (ngSubmit)="submitForm()">
+    <input
+      type="text"
+      [(ngModel)]="gymClass.title"
+      name="title"
+      placeholder="Class Title"
+      required
+    />
+
+    <input
+      type="text"
+      [(ngModel)]="gymClass.type"
+      name="type"
+      placeholder="Type e.g. Yoga, HIIT, Cardio, Strength"
+      required
+    />
+
+    <input
+      type="text"
+      [(ngModel)]="gymClass.instructor"
+      name="instructor"
+      placeholder="Instructor"
+      required
+    />
+
+    <input
+      type="number"
+      [(ngModel)]="gymClass.capacity"
+      name="capacity"
+      placeholder="Capacity"
+      required
+    />
+
+    <input
+      type="text"
+      [(ngModel)]="gymClass.location"
+      name="location"
+      placeholder="Location"
+      required
+    />
+
+    <input
+      type="datetime-local"
+      [(ngModel)]="gymClass.start_time"
+      name="start_time"
+      required
+    />
+
+    <input
+      type="number"
+      [(ngModel)]="gymClass.duration_mins"
+      name="duration_mins"
+      placeholder="Duration in minutes"
+      required
+    />
+
+    <div class="form-actions">
+      <button type="submit" class="save-btn">
+        {{ isEditMode ? 'Update Class' : 'Add Class' }}
+      </button>
+
+      <a routerLink="/admin/manage-classes" class="cancel-btn">Cancel</a>
+    </div>
+  </form>
+</section>

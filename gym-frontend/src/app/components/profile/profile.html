@@ -1,0 +1,71 @@
+<section class="profile-page">
+  <div class="profile-header">
+    <span class="page-badge">Member Area</span>
+    <h1>My Profile</h1>
+    <p>View your Hero Gym account information and quick actions.</p>
+  </div>
+
+  <div class="profile-card" *ngIf="isLoggedIn; else notLoggedIn">
+    <div class="profile-avatar">
+      {{ role === 'admin' ? 'A' : 'M' }}
+    </div>
+
+    <div class="profile-info">
+      <h2>{{ role === 'admin' ? 'Admin Account' : 'Member Account' }}</h2>
+      <p class="profile-subtitle">You are currently signed in to Hero Gym.</p>
+
+      <div class="info-grid">
+        <div class="info-box">
+          <span>User ID</span>
+          <strong>{{ userId }}</strong>
+        </div>
+
+        <div class="info-box">
+          <span>Role</span>
+          <strong>{{ role | titlecase }}</strong>
+        </div>
+
+        <div class="info-box">
+          <span>Status</span>
+          <strong class="active-status">Active</strong>
+        </div>
+      </div>
+
+      <div class="profile-actions">
+  <a routerLink="/classes" class="primary-btn">View Classes</a>
+
+  <a
+    *ngIf="role !== 'admin'"
+    routerLink="/my-bookings"
+    class="secondary-btn"
+  >
+    My Bookings
+  </a>
+
+  <a
+    *ngIf="role === 'admin'"
+    routerLink="/admin"
+    class="secondary-btn"
+  >
+    Admin Dashboard
+  </a>
+
+  <a
+    *ngIf="role === 'admin'"
+    routerLink="/analytics"
+    class="secondary-btn"
+  >
+    Analytics
+  </a>
+</div>
+    </div>
+  </div>
+
+  <ng-template #notLoggedIn>
+    <div class="profile-card empty-profile">
+      <h2>You are not logged in</h2>
+      <p>Please login to view your profile.</p>
+      <a routerLink="/login" class="primary-btn">Login</a>
+    </div>
+  </ng-template>
+</section>

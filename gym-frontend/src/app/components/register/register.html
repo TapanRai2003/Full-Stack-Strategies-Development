@@ -1,0 +1,64 @@
+<div class="auth-shell">
+  <div class="auth-wrapper">
+    <div class="auth-visual">
+      <img src="/images/auth-gym.png" alt="Hero Gym" />
+
+      <div class="auth-visual-overlay">
+        <span>Join Hero Gym</span>
+        <h2>Create your account and start booking today</h2>
+        <p>Register to explore classes, reserve sessions and manage your bookings easily.</p>
+      </div>
+    </div>
+
+    <div class="auth-card">
+      <div class="auth-head">
+        <h2>Register</h2>
+        <p>Create your Hero Gym member account</p>
+      </div>
+
+      <form (ngSubmit)="register()">
+        <div class="input-group">
+          <label>Full Name</label>
+          <input
+            type="text"
+            [(ngModel)]="name"
+            name="name"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label>Email Address</label>
+          <input
+            type="email"
+            [(ngModel)]="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label>Password</label>
+          <input
+            type="password"
+            [(ngModel)]="password"
+            name="password"
+            placeholder="Create a password"
+            required
+          />
+        </div>
+
+        <button type="submit">Create Account</button>
+      </form>
+
+      <p class="message" *ngIf="message">{{ message }}</p>
+
+      <div class="auth-footer">
+        <span>Already have an account?</span>
+        <a routerLink="/login">Login</a>
+      </div>
+    </div>
+  </div>
+</div>

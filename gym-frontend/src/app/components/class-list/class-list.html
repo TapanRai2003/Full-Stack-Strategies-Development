@@ -1,0 +1,69 @@
+<section class="page-header">
+  <span class="page-badge">Available Sessions</span>
+  <h2>Find Your Next Workout</h2>
+  <p>Browse classes, filter by type or instructor, and reserve your place instantly.</p>
+</section>
+
+<div class="filters">
+  <input
+    type="text"
+    [(ngModel)]="searchText"
+    placeholder="Search by title, type, or instructor"
+    (input)="applyFilters()"
+  />
+
+  <select [(ngModel)]="selectedType" (change)="applyFilters()">
+    <option value="">All Types</option>
+    <option *ngFor="let type of getUniqueTypes()" [value]="type">
+      {{ type }}
+    </option>
+  </select>
+
+  <select [(ngModel)]="selectedInstructor" (change)="applyFilters()">
+    <option value="">All Instructors</option>
+    <option *ngFor="let instructor of getUniqueInstructors()" [value]="instructor">
+      {{ instructor }}
+    </option>
+  </select>
+
+  <button class="reset-btn" (click)="resetFilters()">Reset</button>
+</div>
+
+<p class="message" *ngIf="message">{{ message }}</p>
+
+<div class="class-grid">
+  <div class="class-card" *ngFor="let gymClass of classes">
+    <div class="class-image-wrap">
+      <img class="class-image" [src]="gymClass.image" [alt]="gymClass.title" />
+      <span class="type-badge">{{ gymClass.type }}</span>
+    </div>
+
+    <div class="class-content">
+      <h3>{{ gymClass.title }}</h3>
+
+      <div class="class-meta">
+        <p><strong>Instructor:</strong> {{ gymClass.instructor }}</p>
+        <p><strong>Capacity:</strong> {{ gymClass.capacity }}</p>
+        <p><strong>Location:</strong> {{ gymClass.location || 'N/A' }}</p>
+        <p><strong>Start Time:</strong> {{ gymClass.start_time || 'N/A' }}</p>
+        <p><strong>Duration:</strong> {{ gymClass.duration_mins || 45 }} mins</p>
+      </div>
+
+      <button
+        class="book-btn"
+        *ngIf="!isAdmin()"
+        (click)="bookClass(gymClass.id)"
+      >
+        Book Now
+      </button>
+
+      <a
+        class="admin-manage-btn"
+        *ngIf="isAdmin()"
+        [routerLink]="['/admin/edit-class', gymClass.id]"
+      >
+        Manage Class
+      </a>
+    </div>
+  </div>
+</div>

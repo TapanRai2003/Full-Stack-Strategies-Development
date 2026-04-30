@@ -1,0 +1,61 @@
+.class-form-page {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.class-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: white;
+  padding: 32px;
+  border-radius: 24px;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.class-form input {
+  padding: 15px 16px;
+  border: 1px solid #dbe2ea;
+  border-radius: 14px;
+  font-size: 15px;
+  outline: none;
+}
+
+.class-form input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.save-btn,
+.cancel-btn {
+  padding: 15px 22px;
+  border-radius: 14px;
+  font-weight: 900;
+}
+
+.save-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background: #1d4ed8;
+}
+
+.cancel-btn {
+  background: #e5e7eb;
+  color: #0f172a;
+}
+
+.cancel-btn:hover {
+  background: #d1d5db;
+}
